@@ -5,5 +5,10 @@ function assertValidScore(score: number): void {
 export function calcStudentGrade(labs: number, tests: number, project: number) {
   [labs, tests, project].forEach(assertValidScore);
   const total = Math.round(labs * 0.3 + tests * 0.3 + project * 0.4);
-  return { total, ects: 'A' };
+  
+  let ects = 'A';
+  if (total < 90 && total >= 82) ects = 'B';
+  if (total < 82 && total >= 74) ects = 'C';
+  
+  return { total, ects };
 }
