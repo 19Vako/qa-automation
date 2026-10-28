@@ -26,6 +26,11 @@ it.each([
   { labs: 82, tests: 82, project: 82, expected: 'B' },
   { labs: 81, tests: 81, project: 81, expected: 'C' },
   { labs: 74, tests: 74, project: 74, expected: 'C' },
+  { labs: 73, tests: 73, project: 73, expected: 'D' },
+  { labs: 64, tests: 64, project: 64, expected: 'D' },
+  { labs: 63, tests: 63, project: 63, expected: 'E' },
+  { labs: 60, tests: 60, project: 60, expected: 'E' },
+  { labs: 59, tests: 59, project: 59, expected: 'F' }
 ])('межові значення: бали $labs → ЄКТС $expected', ({ labs, tests, project, expected }) => {
   expect(calcStudentGrade(labs, tests, project).ects).toBe(expected);
 });
