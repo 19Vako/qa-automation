@@ -5,6 +5,6 @@ function assertValidScore(score: number): void {
 export function calcStudentGrade(labs: number, tests: number, project: number) {
   [labs, tests, project].forEach(assertValidScore);
   return {
-    total: labs * 0.3 + tests * 0.3 + project * 0.4
+    total: Math.round(labs * 0.3 + tests * 0.3 + project * 0.4)
   };
 }
