@@ -1,0 +1,10 @@
+import { it, expect } from 'vitest';
+import { calcStudentGrade } from '../src/studentGrade';
+
+it.each([
+  [-1, 50, 50],
+  [101, 50, 50]
+])('відхиляє бали поза діапазоном %i, %i, %i', (labs, tests, project) => {
+  
+  expect(() => calcStudentGrade(labs, tests, project)).toThrow('INVALID_SCORE');
+});
