@@ -6,7 +6,9 @@ export function getECTSGrade(total: number): string {
   if (total >= 90) return 'A';
   if (total >= 82) return 'B';
   if (total >= 74) return 'C';
-  return 'A';  
+  if (total >= 64) return 'D';
+  if (total >= 60) return 'E';
+  return 'F';
 }
 
 export function calcStudentGrade(labs: number, tests: number, project: number) {
