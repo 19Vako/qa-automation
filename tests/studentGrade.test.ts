@@ -20,3 +20,12 @@ it('заокруглює результат до найближчого ціло
 it('повертає оцінку A для балів >= 90', () => {
   expect(calcStudentGrade(90, 90, 90).ects).toBe('A');
 });
+
+it.each([
+  { labs: 89, tests: 89, project: 89, expected: 'B' },
+  { labs: 82, tests: 82, project: 82, expected: 'B' },
+  { labs: 81, tests: 81, project: 81, expected: 'C' },
+  { labs: 74, tests: 74, project: 74, expected: 'C' },
+])('межові значення: бали $labs → ЄКТС $expected', ({ labs, tests, project, expected }) => {
+  expect(calcStudentGrade(labs, tests, project).ects).toBe(expected);
+});
