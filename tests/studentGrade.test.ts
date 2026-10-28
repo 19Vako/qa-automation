@@ -8,3 +8,7 @@ it.each([
   
   expect(() => calcStudentGrade(labs, tests, project)).toThrow('INVALID_SCORE');
 });
+
+it('коректно рахує загальний бал з ваговими коефіцієнтами', () => {
+  expect(calcStudentGrade(100, 100, 100)?.total).toBe(100);
+});
